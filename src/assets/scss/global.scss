@@ -1,0 +1,14 @@
+@import '../../../node_modules/nes.css/css/nes.css';
+@import './fonts.scss';
+
+html {
+  font-size: 62.5%;
+
+  body {
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: 'Press Start 2P';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
