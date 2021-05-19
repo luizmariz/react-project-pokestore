@@ -1,0 +1,22 @@
+// Colors
+$watter: #006bb3;
+$fire: #ce372b;
+$grass: #4aa52e;
+
+// Layout
+$padding: 2rem;
+$page-max-width: 138rem;
+$form-max-width: 100rem;
+
+// Grid
+$grid-columns: 12 !default; // Number of columns in the grid system
+$grid-columns-tab: 8 !default; // Number of columns in the grid system for tablets
+$grid-columns-mob: 4 !default; // Number of columns in the grid system for mobile phones
+$grid-max-width: 1440px;
+$grid-gap: #{$padding} !default;
+$grid-margin: #{$padding} !default;
+
+// Style
+$custom-pointer: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC)
+    14 0,
+  pointer;

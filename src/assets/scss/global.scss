@@ -1,5 +1,10 @@
-@import '../../../node_modules/nes.css/css/nes.css';
 @import './fonts.scss';
+@import './variables.scss';
+@import './breakpoints.scss';
+@import './flex.scss';
+@import './grid.scss';
+
+@import '../../../node_modules/nes.css/css/nes.css';
 
 html {
   font-size: 62.5%;
@@ -10,5 +15,16 @@ html {
     font-family: 'Press Start 2P';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &,
+  * {
+    box-sizing: border-box;
   }
 }

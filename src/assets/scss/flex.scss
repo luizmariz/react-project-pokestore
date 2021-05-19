@@ -1,0 +1,104 @@
+.l-container--lg,
+.l-container--tab,
+.l-container {
+  display: flex;
+  width: calc(100% + var(--padding));
+  flex-flow: row wrap;
+  margin: calc(#{$grid-gap} / -2);
+  position: relative;
+
+  [class*='__item'],
+  [class*='__col-'] {
+    padding: calc(#{$grid-gap} / 2);
+  }
+}
+
+.l-container {
+  @for $i from 1 through $grid-columns-mob {
+    .l-container__col-#{$i} {
+      flex-basis: (100 / ($grid-columns-mob / $i)) * 1%;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .l-container--tab {
+    @for $i from 1 through $grid-columns-tab {
+      .l-container__col-#{$i}--tab {
+        flex-basis: (100 / ($grid-columns-tab / $i)) * 1%;
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .l-container-lg {
+    @for $i from 1 through $grid-columns {
+      .l-container__col-#{$i}--lg {
+        flex-basis: (100 / ($grid-columns / $i)) * 1%;
+      }
+    }
+  }
+}
+
+[class*='l-flex'] {
+  display: flex;
+
+  &[class*='--row'] {
+    flex-direction: row;
+  }
+
+  &[class*='--row-reverse'] {
+    flex-direction: row-reverse;
+  }
+
+  &[class*='--column'] {
+    flex-direction: column;
+  }
+
+  &[class*='--column-reverse'] {
+    flex-direction: column-reverse;
+  }
+
+  &[class*='--nowrap'] {
+    flex-wrap: nowrap;
+  }
+
+  &[class*='--wrap'] {
+    flex-wrap: wrap;
+  }
+
+  &[class*='--wrap-reverse'] {
+    flex-wrap: wrap-reverse;
+  }
+
+  &[class*='--middle'] {
+    align-items: center;
+  }
+
+  &[class*='--between'] {
+    justify-content: space-between;
+  }
+
+  &[class*='--center'] {
+    justify-content: center;
+  }
+
+  &[class*='--end'] {
+    justify-content: flex-end;
+  }
+
+  &[class*='--start'] {
+    align-items: flex-start;
+  }
+
+  > [class*='l-flex'][class*='__item'] {
+    &[class*='--grow'] {
+      flex-grow: 1;
+    }
+
+    &[class*='--center-self'] {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import 'src/assets/scss/variables.scss';
+
+.l-choose-store-wrapper {
+  background: url('https://i.pinimg.com/originals/f0/a1/da/f0a1daca607b12766ac114bfe277bf74.jpg')
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+
+  .c-pokestore-logo {
+    max-width: 80%;
+  }
+
+  .nes-container {
+    max-width: 62rem;
+  }
+
+  .c-pokestore-logo,
+  .nes-container {
+    margin: $padding * 4 0;
+  }
+
+  .c-pokestore-link {
+    cursor: $custom-pointer;
+    border: 3px solid transparent;
+    position: relative;
+    padding: $padding;
+
+    i:nth-child(2) {
+      transform: scale(0.6);
+      margin-bottom: -$padding;
+    }
+
+    i:nth-child(3) {
+      transform: scale(0.4);
+      margin-bottom: -$padding;
+    }
+
+    .nes-badge {
+      transform: scale(0.8);
+    }
+
+    &:hover {
+      background-color: #ffffff55;
+      border-image-slice: 3;
+      border-image-width: 3;
+      border-image-repeat: space;
+      border-image-outset: 2;
+      border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+    }
+
+    &:hover::after {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+      content: '';
+      box-shadow: inset -3px -3px #ffffff55;
+    }
+  }
+}

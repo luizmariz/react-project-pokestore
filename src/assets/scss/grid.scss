@@ -1,0 +1,102 @@
+.l-grid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $grid-margin;
+  display: grid;
+  max-width: $grid-max-width;
+  grid-gap: $grid-gap;
+
+  grid-template-columns: repeat(#{$grid-columns-mob}, 1fr);
+  grid-template-rows: auto;
+
+  > * {
+    grid-column: span $grid-columns-mob;
+  }
+
+  @for $i from 1 through $grid-columns-mob {
+    .l-grid__col-#{$i} {
+      grid-column: span #{$i};
+    }
+    .l-grid__col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+    .l-grid__col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+}
+
+@include respond-to(md) {
+  .l-grid--tab {
+    width: 100%;
+    max-width: $grid-max-width;
+    display: grid;
+    padding: 0 $grid-margin;
+    grid-gap: $grid-gap;
+
+    grid-template-columns: repeat(#{$grid-columns-tab}, 1fr);
+    grid-template-rows: auto;
+
+    > * {
+      grid-column: span $grid-columns-tab;
+    }
+
+    @for $i from 1 through $grid-columns-tab {
+      .l-grid__col-#{$i}--tab {
+        grid-column: span #{$i};
+      }
+      .l-grid__col-start-#{$i}--tab {
+        grid-column-start: #{$i};
+      }
+      .l-grid__col-end-#{$i}--tab {
+        grid-column-end: #{$i};
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .l-grid--lg {
+    width: 100%;
+    max-width: $grid-max-width;
+    display: grid;
+    margin: 0 auto;
+    padding: 0 $grid-margin;
+    grid-gap: $grid-gap;
+
+    grid-template-columns: repeat(#{$grid-columns}, 1fr);
+    grid-template-rows: auto;
+
+    > * {
+      grid-column: span $grid-columns;
+    }
+
+    @for $i from 1 through $grid-columns {
+      .l-grid__col-#{$i}--lg {
+        grid-column: span #{$i};
+      }
+      .l-grid__col-start-#{$i}--lg {
+        grid-column-start: #{$i};
+      }
+      .l-grid__col-end-#{$i}--lg {
+        grid-column-end: #{$i};
+      }
+    }
+  }
+}
+
+.l-grid,
+.l-grid--tab,
+.l-grid--lg {
+  .l-grid__col-start,
+  .l-grid__col-start--tab,
+  .l-grid__col-start--lg {
+    grid-column-start: 1;
+  }
+
+  .l-grid__col-end,
+  .l-grid__col-end--tab,
+  .l-grid__col-end--lg {
+    grid-column-end: -1;
+  }
+}
