@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
+
 import './ChooseStore.scss';
+
 import logo from '../../assets/images/pokestore-logo.png';
 
 function ChooseStore() {
   const stores = [
     {
-      path: '',
+      path: '/grass-store',
       iconClass: 'nes-bulbasaur',
       name: 'PLANTA',
       badgeStyle: 'is-success'
@@ -25,25 +28,28 @@ function ChooseStore() {
 
   return (
     <section className="l-choose-store-wrapper">
-      <div className="l-grid">
+      <div className="c-choose-store l-grid">
         <div className="l-grid__col-4 l-flex--column--center--middle">
-          <img src={logo} alt="Pokestore logo" className="c-pokestore-logo" />
+          <img src={logo} alt="Pokestore logo" className="c-choose-store__pokestore-logo" />
           <ul className="l-container l-flex--center">
             {stores.map((store) => (
               <li className="l-container__item">
-                <div className="c-pokestore-link l-flex--column--center--middle">
+                <Link
+                  to={store.path}
+                  className="c-choose-store__pokestore-link l-flex--column--center--middle"
+                >
                   <div className="nes-badge">
                     <span className={store.badgeStyle}>{store.name}</span>
                   </div>
                   <i className={store.iconClass} />
                   <i className="nes-pokeball" />
-                </div>
+                </Link>
               </li>
             ))}
           </ul>
           <div className="nes-container is-rounded is-dark">
             <p>
-              Capturar pokemon pode ser uma atividade cansativa. Por isso, a pokestore oferece uma
+              Capturar pokémon pode ser uma atividade cansativa. Por isso, a pokestore oferece uma
               rede de marketplaces para que você, treinador, possa comprar os seus tipos favoritos
               de pokemon do conforto da sua casa.
             </p>
