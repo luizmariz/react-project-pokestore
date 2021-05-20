@@ -21,7 +21,7 @@
       grid-column-start: #{$i};
     }
     .l-grid__col-end-#{$i} {
-      grid-column-end: #{$i};
+      grid-column-end: #{$i + 1};
     }
   }
 }
@@ -49,7 +49,7 @@
         grid-column-start: #{$i};
       }
       .l-grid__col-end-#{$i}--tab {
-        grid-column-end: #{$i};
+        grid-column-end: #{$i + 1};
       }
     }
   }
@@ -79,7 +79,7 @@
         grid-column-start: #{$i};
       }
       .l-grid__col-end-#{$i}--lg {
-        grid-column-end: #{$i};
+        grid-column-end: #{$i + 1};
       }
     }
   }
