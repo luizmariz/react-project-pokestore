@@ -1,0 +1,14 @@
+@import 'src/assets/scss/variables.scss';
+
+.c-pokemon {
+  background: #d3d3d3;
+  padding: $padding;
+
+  .nes-btn {
+    margin-top: $padding;
+  }
+
+  &:hover {
+    background: #d3d3d3aa;
+  }
+}
