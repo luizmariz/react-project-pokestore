@@ -1,0 +1,20 @@
+@import 'src/assets/scss/variables.scss';
+@import 'src/assets/scss/breakpoints.scss';
+
+.c-grass-store {
+  padding-top: 21.6rem;
+  min-height: 100vh;
+  background-color: rgb(234, 234, 234);
+
+  @include respond-to(md) {
+    padding-top: 18.2rem;
+  }
+
+  @include respond-to(lg) {
+    padding-top: 13.4rem;
+  }
+
+  &__body {
+    padding: $padding;
+  }
+}

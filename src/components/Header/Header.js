@@ -18,12 +18,12 @@ function Header() {
               <h1 className="c-header__title">Planta Store</h1>
             </Link>
           </div>
-          <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-7--lg l-grid__col-end-12--lg l-flex">
+          <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-8--lg l-grid__col-end-12--lg l-flex">
             <input
               type="text"
               id="name_field"
               className="nes-input"
-              placeholder="Busque aqui seu pokémon favorito"
+              placeholder="Busque aqui seu pokémon"
             />
             <button type="button" className="nes-btn is-success">
               Buscar
