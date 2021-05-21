@@ -32,7 +32,7 @@
 }
 
 @include respond-to(lg) {
-  .l-container-lg {
+  .l-container--lg {
     @for $i from 1 through $grid-columns {
       .l-container__col-#{$i}--lg {
         flex-basis: (100 / ($grid-columns / $i)) * 1%;
