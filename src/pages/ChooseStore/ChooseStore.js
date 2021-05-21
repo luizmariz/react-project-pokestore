@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './ChooseStore.scss';
 
-import logo from '../../assets/images/pokestore-logo.png';
+import logo from 'assets/images/pokestore-logo.png';
 
 function ChooseStore() {
   const stores = [
