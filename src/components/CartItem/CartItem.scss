@@ -1,0 +1,29 @@
+@import 'src/assets/scss/variables.scss';
+
+.c-cart-item {
+  border-bottom: 4px solid black;
+
+  i.nes-pokeball {
+    transform: scale(0.3);
+    margin-left: -$padding + 1;
+  }
+
+  &__name {
+    margin-right: $padding;
+  }
+
+  &__price {
+    margin-left: $padding / 4;
+    margin-right: $padding;
+  }
+
+  &__name,
+  &__price {
+    font-size: 1.2rem;
+  }
+
+  &__remove-btn {
+    cursor: $custom-pointer;
+    margin-right: $padding !important;
+  }
+}
