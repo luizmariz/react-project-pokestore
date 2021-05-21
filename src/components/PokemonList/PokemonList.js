@@ -1,33 +1,17 @@
 import './PokemonList.scss';
 
-import Pokemon from '../Pokemon';
+import PropTypes from 'prop-types';
 
-function PokemonList() {
-  return (
-    <ul className="l-container l-container--tab l-container--lg">
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-      <li className="l-container__col-4 l-container__col-4--tab l-container__col-2--lg">
-        <Pokemon />
-      </li>
-    </ul>
-  );
+function PokemonList({ children }) {
+  return <ul className="l-container l-container--tab l-container--lg">{children}</ul>;
 }
+
+PokemonList.defaultProps = {
+  children: []
+};
+
+PokemonList.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element)
+};
 
 export default PokemonList;
