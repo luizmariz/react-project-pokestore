@@ -11,3 +11,24 @@ export const mockPokemonPrice = (pokemon) =>
  */
 export const simplePokemonSearchByName = (pokemon, str) =>
   pokemon.filter((p) => p.name.includes(str));
+
+export const getPersistedCart = () => {
+  try {
+    const serializedCart = localStorage.getItem('cart');
+    if (!serializedCart) {
+      return null;
+    }
+    return JSON.parse(serializedCart);
+  } catch (err) {
+    // console.log(err);
+    return null;
+  }
+};
+
+export const persistCart = (state) => {
+  try {
+    const serializedCart = JSON.stringify(state);
+    localStorage.setItem('cart', serializedCart);
+    // eslint-disable-next-line no-empty
+  } catch {}
+};
