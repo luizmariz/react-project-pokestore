@@ -3,9 +3,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import logger from './middlewares/logger';
 
 import pokemonReducer from './features/pokemon/pokemonSlice';
+import cartReducer from './features/cart/cartSlice';
 
 const reducer = {
-  pokemon: pokemonReducer
+  pokemon: pokemonReducer,
+  cart: cartReducer
 };
 
 const store = configureStore({

@@ -2,12 +2,16 @@
 @import 'src/assets/scss/breakpoints.scss';
 
 .c-grass-store {
-  padding-top: 21.6rem;
+  padding-top: 28.5rem;
   min-height: 100vh;
   background-color: rgb(234, 234, 234);
 
+  @include respond-to(sm) {
+    padding-top: 25.1rem;
+  }
+
   @include respond-to(md) {
-    padding-top: 18.2rem;
+    padding-top: 25.1rem;
   }
 
   @include respond-to(lg) {

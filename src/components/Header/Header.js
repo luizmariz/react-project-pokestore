@@ -11,7 +11,8 @@ function Header({
   onSearchInputChange,
   onSearch,
   headerClass,
-  searchBtnClass
+  searchBtnClass,
+  itemsCartCounter
 }) {
   return (
     <header className="c-header">
@@ -29,7 +30,7 @@ function Header({
               <h1 className="c-header__title">{storeName}</h1>
             </Link>
           </div>
-          <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-7--lg l-grid__col-end-12--lg l-flex">
+          <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-5--lg l-grid__col-end-10--lg l-flex">
             <input
               type="text"
               id="name_field"
@@ -40,6 +41,11 @@ function Header({
             />
             <button type="button" className={`nes-btn ${searchBtnClass}`} onClick={onSearch}>
               Buscar
+            </button>
+          </div>
+          <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-11--lg l-grid__col-end-12--lg l-flex">
+            <button type="button" className="nes-btn c-header__cart-btn">
+              Carrinho ({itemsCartCounter})
             </button>
           </div>
         </div>
@@ -56,7 +62,8 @@ Header.propTypes = {
   onSearch: PropTypes.func,
   onSearchInputChange: PropTypes.func,
   headerClass: PropTypes.string,
-  searchBtnClass: PropTypes.string
+  searchBtnClass: PropTypes.string,
+  itemsCartCounter: PropTypes.number
 };
 
 Header.defaultProps = {
@@ -67,7 +74,8 @@ Header.defaultProps = {
   onSearch: () => {},
   onSearchInputChange: () => {},
   headerClass: '',
-  searchBtnClass: ''
+  searchBtnClass: '',
+  itemsCartCounter: 0
 };
 
 export default Header;
