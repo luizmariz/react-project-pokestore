@@ -3,7 +3,8 @@ import './Pokemon.scss';
 import PropTypes from 'prop-types';
 
 function Pokemon({ id, name, price, spriteUrl, onAddToCart }) {
-  const handleAddToCartClick = () => {
+  const handleAddToCartClick = (e) => {
+    e.preventDefault();
     onAddToCart({ id, name, price });
   };
 
@@ -24,17 +25,17 @@ function Pokemon({ id, name, price, spriteUrl, onAddToCart }) {
   );
 }
 
-Pokemon.defaultProps = {
-  spriteUrl: '',
-  onAddToCart: () => {}
-};
-
 Pokemon.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   spriteUrl: PropTypes.string,
   onAddToCart: PropTypes.func
+};
+
+Pokemon.defaultProps = {
+  spriteUrl: '',
+  onAddToCart: () => {}
 };
 
 export default Pokemon;

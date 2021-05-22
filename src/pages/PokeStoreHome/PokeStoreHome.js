@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import './ChooseStore.scss';
+import './PokeStoreHome.scss';
 
 import logo from 'assets/images/pokestore-logo.png';
 
-function ChooseStore() {
+function PokeStoreHome() {
   const stores = [
     {
       path: '/grass-store',
@@ -60,4 +60,4 @@ function ChooseStore() {
   );
 }
 
-export default ChooseStore;
+export default PokeStoreHome;

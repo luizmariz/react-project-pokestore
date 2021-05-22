@@ -35,4 +35,9 @@ html {
     font-size: 1rem;
     background-color: #fff;
   }
+
+  .nes-dialog .nes-btn {
+    margin-right: $padding;
+    margin-top: $padding * 2;
+  }
 }

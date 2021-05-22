@@ -1,0 +1,46 @@
+@import 'src/assets/scss/variables.scss';
+
+.c-shopping-cart {
+  padding-top: $padding;
+  padding-bottom: $padding;
+
+  &__bitmap {
+    margin: $padding 0;
+    & > :nth-child(1) {
+      margin-right: 1.4rem;
+    }
+
+    & > i:nth-child(2) {
+      padding-left: padding;
+    }
+
+    & > i:nth-child(3) {
+      transform: scale(0.7);
+      margin-bottom: -1rem;
+    }
+  }
+
+  &__description {
+    margin: $padding / 2 0;
+    font-size: 1.2rem;
+    opacity: 0.5;
+  }
+
+  &__total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: $padding * 2 0;
+  }
+
+  &__checkout-btn {
+    margin-bottom: $padding * 2;
+  }
+
+  &__empty-cart-item {
+    line-height: 8.4rem;
+    background: #d3d3d3;
+    padding: 0 $padding;
+    opacity: 0.5;
+    user-select: none;
+  }
+}

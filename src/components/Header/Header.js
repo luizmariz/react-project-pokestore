@@ -10,6 +10,7 @@ function Header({
   searchInputValue,
   onSearchInputChange,
   onSearch,
+  onCartClick,
   headerClass,
   searchBtnClass,
   itemsCartCounter
@@ -44,7 +45,7 @@ function Header({
             </button>
           </div>
           <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-start-11--lg l-grid__col-end-12--lg l-flex">
-            <button type="button" className="nes-btn c-header__cart-btn">
+            <button type="button" className="nes-btn c-header__cart-btn" onClick={onCartClick}>
               Carrinho ({itemsCartCounter})
             </button>
           </div>
@@ -59,11 +60,12 @@ Header.propTypes = {
   storePath: PropTypes.string,
   searchInputPlaceholder: PropTypes.string,
   searchInputValue: PropTypes.string,
-  onSearch: PropTypes.func,
-  onSearchInputChange: PropTypes.func,
   headerClass: PropTypes.string,
   searchBtnClass: PropTypes.string,
-  itemsCartCounter: PropTypes.number
+  itemsCartCounter: PropTypes.number,
+  onCartClick: PropTypes.func,
+  onSearch: PropTypes.func,
+  onSearchInputChange: PropTypes.func
 };
 
 Header.defaultProps = {
@@ -71,11 +73,12 @@ Header.defaultProps = {
   storePath: '',
   searchInputPlaceholder: 'Busque aqui o seu pokemon',
   searchInputValue: '',
-  onSearch: () => {},
-  onSearchInputChange: () => {},
   headerClass: '',
   searchBtnClass: '',
-  itemsCartCounter: 0
+  itemsCartCounter: 0,
+  onSearch: () => {},
+  onSearchInputChange: () => {},
+  onCartClick: () => {}
 };
 
 export default Header;

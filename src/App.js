@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import ChooseStore from './pages/ChooseStore';
+import PokeStoreHome from './pages/PokeStoreHome';
 import GrassStore from './pages/GrassStore';
 
 function App() {
@@ -8,9 +8,9 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <ChooseStore />
+          <PokeStoreHome />
         </Route>
-        <Route exact path="/grass-store">
+        <Route path="/grass-store">
           <GrassStore />
         </Route>
       </Switch>
