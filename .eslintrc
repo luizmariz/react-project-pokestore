@@ -22,7 +22,8 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "no-console": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-plusplus": "off"
   },
   "settings": {
     "import/resolver": {
