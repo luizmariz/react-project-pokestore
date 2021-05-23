@@ -11,6 +11,7 @@ import { simplePokemonSearchByName } from 'utils/helpers';
 import Header from 'components/Header';
 import StoreHome from '../StoreHome';
 import ShoppingCart from '../ShoppingCart';
+import PokemonDetails from '../PokemonDetails';
 
 const STORE_CART_KEY = process.env.REACT_APP_GRASS_STORE_CART_KEY;
 
@@ -79,7 +80,11 @@ function GrassStore() {
 
       <Route exact path={`${path}`}>
         {pokemonStatus === 'succeeded' && (
-          <StoreHome pokemon={filteredPokemon} onAddPokemonToCart={handleAddPokemonToCart} />
+          <StoreHome
+            pokemon={filteredPokemon}
+            onAddPokemonToCart={handleAddPokemonToCart}
+            path={path}
+          />
         )}
       </Route>
       <Route exact path={`${path}/shopping-cart`}>
@@ -88,6 +93,9 @@ function GrassStore() {
           pokemonBitmapClass="nes-bulbasaur"
           checkoutBtnClass="is-success"
         />
+      </Route>
+      <Route exact path={`${path}/pokemon/:pokemonId`}>
+        <PokemonDetails />
       </Route>
     </section>
   );
