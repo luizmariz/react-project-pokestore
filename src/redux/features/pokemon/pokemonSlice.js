@@ -2,16 +2,30 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import pokemonService from 'services/pokemonService';
 
+import { updateCartPrices } from '../cart/cartSlice';
+
 const initialState = {
   status: 'idle',
   error: null,
   entities: {}
 };
 
-export const fetchPokemonByType = createAsyncThunk('pokemon/fetchPokemonByType', async (type) => {
-  const res = await pokemonService.getAllPokemonByType(type);
-  return res;
-});
+export const fetchPokemonByType = createAsyncThunk(
+  'pokemon/fetchPokemonByType',
+  async (type, thunkAPI) => {
+    const res = await pokemonService.getAllPokemonByType(type);
+
+    // Precisamos atualizar os preços do carrinho na localStorage
+    const { cart } = thunkAPI.getState();
+    const entitiesToUpdate = res.filter((p) => cart.ids.includes(p.id));
+
+    thunkAPI.dispatch(
+      updateCartPrices(entitiesToUpdate.map((e) => ({ id: e.id, changes: { price: e.price } })))
+    );
+
+    return res;
+  }
+);
 
 const pokemonSlice = createSlice({
   name: 'pokemon',

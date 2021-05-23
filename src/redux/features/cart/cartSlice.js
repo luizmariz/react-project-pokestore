@@ -74,6 +74,31 @@ const cartSlice = createSlice({
       state.numberOfItemsByStore[store] = 0;
       state.numberOfItemsByStoreById[store] = {};
       state.idsByStore[store] = [];
+    },
+    updateCartPrices: (state, action) => {
+      const priceById = action.payload.reduce((acc, cur) => {
+        acc[cur.id] = cur.changes.price;
+        return acc;
+      }, {});
+
+      const newTotalByStore = {};
+
+      Object.keys(state.totalByStore).forEach((store) => {
+        const ids = state.idsByStore[store];
+        const numberOfItemsById = state.numberOfItemsByStoreById[store];
+
+        let total = 0;
+
+        ids.forEach((id) => {
+          const price = priceById[id] ? priceById[id] : state.entities[id].price;
+          total += price * numberOfItemsById[id];
+        });
+
+        newTotalByStore[store] = total;
+      });
+
+      state.totalByStore = newTotalByStore;
+      cartAdapter.updateMany(state, action);
     }
   }
 });
@@ -86,6 +111,7 @@ export const selectTotalByStore = (store) => (state) => state.cart.totalByStore[
 export const selectAllCartItemByStore = (store) => (state) =>
   state.cart.idsByStore[store].map((id) => state.cart.entities[id]);
 
-export const { addItemToCart, removeItemFromCart, checkoutCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, checkoutCart, updateCartPrices } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
