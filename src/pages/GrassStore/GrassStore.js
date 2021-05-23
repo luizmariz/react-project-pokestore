@@ -79,12 +79,16 @@ function GrassStore() {
       />
 
       <Route exact path={`${path}`}>
-        {pokemonStatus === 'succeeded' && (
+        {(pokemonStatus === 'succeeded' && (
           <StoreHome
             pokemon={filteredPokemon}
             onAddPokemonToCart={handleAddPokemonToCart}
             path={path}
           />
+        )) || (
+          <p className="l-grid" style={{ marginTop: '2rem' }}>
+            Carregando...
+          </p>
         )}
       </Route>
       <Route exact path={`${path}/shopping-cart`}>
@@ -95,7 +99,7 @@ function GrassStore() {
         />
       </Route>
       <Route exact path={`${path}/pokemon/:pokemonId`}>
-        <PokemonDetails />
+        <PokemonDetails storeCartKey={STORE_CART_KEY} checkoutBtnClass="is-success" />
       </Route>
     </section>
   );

@@ -42,7 +42,7 @@ function ShoppingCart({ storeCartKey, pokemonBitmapClass, checkoutBtnClass }) {
 
   return (
     <>
-      <div className="l-grid l-grid--tab l-grid--lg c-shopping-cart">
+      <section className="l-grid l-grid--tab l-grid--lg c-shopping-cart">
         <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-4--lg">
           <div className="c-shopping-cart__bitmap">
             <i className="nes-ash" />
@@ -86,7 +86,7 @@ function ShoppingCart({ storeCartKey, pokemonBitmapClass, checkoutBtnClass }) {
             ))}
           </CartList>
         </div>
-      </div>
+      </section>
       <dialog className="nes-dialog" ref={checkoutDialog}>
         <form method="dialog">
           <p>Obrigado pela compra!!</p>

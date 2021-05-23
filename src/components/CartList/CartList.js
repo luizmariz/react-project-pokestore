@@ -11,11 +11,7 @@ function CartList({ children }) {
 }
 
 CartList.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element)
-};
-
-CartList.defaultProps = {
-  children: []
+  children: PropTypes.arrayOf(PropTypes.element).isRequired
 };
 
 export default CartList;

@@ -5,11 +5,7 @@ function PokemonList({ children }) {
 }
 
 PokemonList.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element)
-};
-
-PokemonList.defaultProps = {
-  children: []
+  children: PropTypes.arrayOf(PropTypes.element).isRequired
 };
 
 export default PokemonList;

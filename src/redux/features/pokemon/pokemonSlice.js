@@ -5,7 +5,7 @@ import pokemonService from 'services/pokemonService';
 const initialState = {
   status: 'idle',
   error: null,
-  entities: null
+  entities: {}
 };
 
 export const fetchPokemonByType = createAsyncThunk('pokemon/fetchPokemonByType', async (type) => {
@@ -41,5 +41,8 @@ const pokemonSlice = createSlice({
 
 export const selectAllPokemon = (state) =>
   state.pokemon.entities ? Object.values(state.pokemon.entities) : [];
+
+export const selectPriceByPokemonId = (id) => (state) =>
+  state.pokemon.entities[id] ? state.pokemon.entities[id].price : null;
 
 export default pokemonSlice.reducer;

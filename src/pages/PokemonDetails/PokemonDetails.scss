@@ -1,0 +1,63 @@
+@import 'src/assets/scss/variables.scss';
+
+@keyframes rainbow_animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.c-pokemon-details {
+  padding-top: $padding;
+  padding-bottom: $padding;
+
+  &__panel {
+    background: #d3d3d3;
+    padding: $padding;
+    width: 100%;
+    margin-bottom: $padding / 2;
+  }
+
+  &__sprite {
+    padding: $padding;
+  }
+
+  &__subtitle {
+    margin-bottom: $padding / 2;
+  }
+
+  &__subtitle,
+  &__pokedex-index {
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  &__stat {
+    font-size: 1.2rem;
+  }
+
+  .nes-btn {
+    width: calc(100% - #{$padding / 2});
+  }
+
+  &__promo-subtitle {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+
+    &--animated {
+      background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 400% 100%;
+    }
+  }
+}
