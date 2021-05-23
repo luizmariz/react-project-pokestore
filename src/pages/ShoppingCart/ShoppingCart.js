@@ -55,7 +55,8 @@ function ShoppingCart({ storeCartKey, pokemonBitmapClass, checkoutBtnClass }) {
             em específico, basta removê-lo da lista
           </p>
           <p className="c-shopping-cart__total">
-            TOTAL: <i className="nes-icon coin is-small" /> {total}
+            TOTAL: <i className="nes-icon coin is-small" />
+            {total}
           </p>
           <button
             type="button"

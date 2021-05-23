@@ -4,4 +4,14 @@
 .c-store-home {
   padding-top: $padding;
   padding-bottom: $padding;
+
+  &__pokemon-card {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+  }
 }

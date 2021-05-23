@@ -33,7 +33,7 @@ function PokeStoreHome() {
           <img src={logo} alt="Pokestore logo" className="c-choose-store__pokestore-logo" />
           <ul className="l-container l-flex--center">
             {stores.map((store) => (
-              <li className="l-container__item">
+              <li className="l-container__item" key={`${store.name}/${store.path}`}>
                 <Link
                   to={store.path}
                   className="c-choose-store__pokestore-link l-flex--column--center--middle"

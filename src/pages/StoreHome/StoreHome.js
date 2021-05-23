@@ -5,7 +5,7 @@ import './StoreHome.scss';
 import PokemonList from 'components/PokemonList';
 import Pokemon from 'components/Pokemon';
 
-function StoreHome({ pokemon, onAddPokemonToCart }) {
+function StoreHome({ pokemon, onAddPokemonToCart, path }) {
   return (
     <div className="l-grid l-grid--tab l-grid--lg c-store-home">
       <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-12--lg">
@@ -18,6 +18,7 @@ function StoreHome({ pokemon, onAddPokemonToCart }) {
               spriteUrl={p.sprites.front_default}
               price={p.price}
               onAddToCart={onAddPokemonToCart}
+              href={`${path}/pokemon/${p.id}`}
             />
           ))}
         </PokemonList>
@@ -27,11 +28,13 @@ function StoreHome({ pokemon, onAddPokemonToCart }) {
 }
 
 StoreHome.propTypes = {
+  path: PropTypes.string,
   pokemon: PropTypes.arrayOf(PropTypes.object),
   onAddPokemonToCart: PropTypes.func
 };
 
 StoreHome.defaultProps = {
+  path: '',
   pokemon: PropTypes.arrayOf(PropTypes.object),
   onAddPokemonToCart: PropTypes.func
 };
