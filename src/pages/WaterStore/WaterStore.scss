@@ -2,10 +2,10 @@
 @import 'src/assets/scss/breakpoints.scss';
 @import 'src/assets/scss/mixins.scss';
 
-.c-grass-store {
+.c-water-store {
   @include setup-store-styles();
 
   &__header {
-    background-color: $grass !important;
+    background-color: $water !important;
   }
 }

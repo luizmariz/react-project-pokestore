@@ -1,0 +1,17 @@
+@mixin setup-store-styles() {
+  padding-top: 28.5rem;
+  min-height: 100vh;
+  background-color: rgb(234, 234, 234);
+
+  @include respond-to(sm) {
+    padding-top: 25.1rem;
+  }
+
+  @include respond-to(md) {
+    padding-top: 25.1rem;
+  }
+
+  @include respond-to(lg) {
+    padding-top: 13.8rem;
+  }
+}

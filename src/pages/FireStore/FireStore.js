@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom';
 
-import './GrassStore.scss';
+import './FireStore.scss';
 
 import useSetupStore from 'hooks/useSetupStore';
 
@@ -9,9 +9,9 @@ import StoreHome from '../StoreHome';
 import ShoppingCart from '../ShoppingCart';
 import PokemonDetails from '../PokemonDetails';
 
-const STORE_CART_KEY = process.env.REACT_APP_GRASS_STORE_CART_KEY;
+const STORE_CART_KEY = process.env.REACT_APP_FIRE_STORE_CART_KEY;
 
-function GrassStore() {
+function FireStore() {
   const {
     path,
     searchInputValue,
@@ -22,16 +22,16 @@ function GrassStore() {
     handleSearchInputChange,
     handleAddPokemonToCart,
     handleCartClick
-  } = useSetupStore('grass', STORE_CART_KEY);
+  } = useSetupStore('fire', STORE_CART_KEY);
 
   return (
-    <section className="c-grass-store">
+    <section className="c-fire-store">
       <Header
-        storeName="PLANTA STORE"
-        storePath="/grass-store"
+        storeName="FOGO STORE"
+        storePath="/fire-store"
         searchInputPlaceholder="Busque aqui o seu tipo planta"
-        headerClass="c-grass-store__header"
-        searchBtnClass="is-success"
+        headerClass="c-fire-store__header"
+        searchBtnClass="is-error"
         searchInputValue={searchInputValue}
         itemsCartCounter={itemsOnCart}
         onSearchInputChange={handleSearchInputChange}
@@ -55,15 +55,15 @@ function GrassStore() {
       <Route exact path={`${path}/shopping-cart`}>
         <ShoppingCart
           storeCartKey={STORE_CART_KEY}
-          pokemonBitmapClass="nes-bulbasaur"
-          checkoutBtnClass="is-success"
+          pokemonBitmapClass="nes-charmander"
+          checkoutBtnClass="is-error"
         />
       </Route>
       <Route exact path={`${path}/pokemon/:pokemonId`}>
-        <PokemonDetails storeCartKey={STORE_CART_KEY} checkoutBtnClass="is-success" />
+        <PokemonDetails storeCartKey={STORE_CART_KEY} checkoutBtnClass="is-error" />
       </Route>
     </section>
   );
 }
 
-export default GrassStore;
+export default FireStore;

@@ -1,21 +1,31 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 
 const GRASS_STORE_KEY = process.env.REACT_APP_GRASS_STORE_CART_KEY;
+const FIRE_STORE_KEY = process.env.REACT_APP_FIRE_STORE_CART_KEY;
+const WATER_STORE_KEY = process.env.REACT_APP_WATER_STORE_CART_KEY;
 
 const cartAdapter = createEntityAdapter();
 
 const initialState = cartAdapter.getInitialState({
   totalByStore: {
-    [GRASS_STORE_KEY]: 0
+    [GRASS_STORE_KEY]: 0,
+    [FIRE_STORE_KEY]: 0,
+    [WATER_STORE_KEY]: 0
   },
   numberOfItemsByStore: {
-    [GRASS_STORE_KEY]: 0
+    [GRASS_STORE_KEY]: 0,
+    [FIRE_STORE_KEY]: 0,
+    [WATER_STORE_KEY]: 0
   },
   numberOfItemsByStoreById: {
-    [GRASS_STORE_KEY]: {}
+    [GRASS_STORE_KEY]: {},
+    [FIRE_STORE_KEY]: {},
+    [WATER_STORE_KEY]: {}
   },
   idsByStore: {
-    [GRASS_STORE_KEY]: []
+    [GRASS_STORE_KEY]: [],
+    [FIRE_STORE_KEY]: [],
+    [WATER_STORE_KEY]: []
   }
 });
 

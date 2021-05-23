@@ -70,10 +70,10 @@ function ShoppingCart({ storeCartKey, pokemonBitmapClass, checkoutBtnClass }) {
           </button>
         </div>
         <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-8--lg">
+          {!pokemonOnCart.length && (
+            <div className="c-shopping-cart__empty-cart-item">Carrinho vazio :(</div>
+          )}
           <CartList>
-            {!pokemonOnCart.length && (
-              <div className="c-shopping-cart__empty-cart-item">Carrinho vazio :(</div>
-            )}
             {pokemonOnCart.map((p) => (
               <CartItem
                 key={`cart-item/${p.id}`}

@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom';
 
-import './GrassStore.scss';
+import './WaterStore.scss';
 
 import useSetupStore from 'hooks/useSetupStore';
 
@@ -9,9 +9,9 @@ import StoreHome from '../StoreHome';
 import ShoppingCart from '../ShoppingCart';
 import PokemonDetails from '../PokemonDetails';
 
-const STORE_CART_KEY = process.env.REACT_APP_GRASS_STORE_CART_KEY;
+const STORE_CART_KEY = process.env.REACT_APP_WATER_STORE_CART_KEY;
 
-function GrassStore() {
+function WaterStore() {
   const {
     path,
     searchInputValue,
@@ -22,16 +22,16 @@ function GrassStore() {
     handleSearchInputChange,
     handleAddPokemonToCart,
     handleCartClick
-  } = useSetupStore('grass', STORE_CART_KEY);
+  } = useSetupStore('water', STORE_CART_KEY);
 
   return (
-    <section className="c-grass-store">
+    <section className="c-water-store">
       <Header
-        storeName="PLANTA STORE"
-        storePath="/grass-store"
+        storeName="ÁGUA STORE"
+        storePath="/water-store"
         searchInputPlaceholder="Busque aqui o seu tipo planta"
-        headerClass="c-grass-store__header"
-        searchBtnClass="is-success"
+        headerClass="c-water-store__header"
+        searchBtnClass="is-primary"
         searchInputValue={searchInputValue}
         itemsCartCounter={itemsOnCart}
         onSearchInputChange={handleSearchInputChange}
@@ -55,15 +55,15 @@ function GrassStore() {
       <Route exact path={`${path}/shopping-cart`}>
         <ShoppingCart
           storeCartKey={STORE_CART_KEY}
-          pokemonBitmapClass="nes-bulbasaur"
-          checkoutBtnClass="is-success"
+          pokemonBitmapClass="nes-squirtle"
+          checkoutBtnClass="is-primary"
         />
       </Route>
       <Route exact path={`${path}/pokemon/:pokemonId`}>
-        <PokemonDetails storeCartKey={STORE_CART_KEY} checkoutBtnClass="is-success" />
+        <PokemonDetails storeCartKey={STORE_CART_KEY} checkoutBtnClass="is-primary" />
       </Route>
     </section>
   );
 }
 
-export default GrassStore;
+export default WaterStore;

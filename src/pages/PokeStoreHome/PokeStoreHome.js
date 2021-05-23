@@ -13,13 +13,13 @@ function PokeStoreHome() {
       badgeStyle: 'is-success'
     },
     {
-      path: '',
+      path: '/fire-store',
       iconClass: 'nes-charmander',
       name: 'FOGO',
       badgeStyle: 'is-error'
     },
     {
-      path: '',
+      path: '/water-store',
       iconClass: 'nes-squirtle',
       name: 'ÁGUA',
       badgeStyle: 'is-primary'

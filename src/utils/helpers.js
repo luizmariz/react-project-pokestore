@@ -1,6 +1,6 @@
 export const mockPokemonPrice = (pokemon) =>
   pokemon.map((p) => {
-    p.price = Math.floor(Math.random() * 1000000) + 1;
+    p.price = Math.floor(Math.random() * 10000) + 1;
     return p;
   });
 

@@ -30,6 +30,12 @@ export const fetchPokemonByType = createAsyncThunk(
 const pokemonSlice = createSlice({
   name: 'pokemon',
   initialState,
+  reducers: {
+    removeAll: (state) => {
+      state.entities = [];
+      state.status = 'idle';
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchPokemonByType.pending, (state) => {
@@ -58,5 +64,7 @@ export const selectAllPokemon = (state) =>
 
 export const selectPriceByPokemonId = (id) => (state) =>
   state.pokemon.entities[id] ? state.pokemon.entities[id].price : null;
+
+export const { removeAll: removeAllPokemon } = pokemonSlice.actions;
 
 export default pokemonSlice.reducer;
