@@ -11,6 +11,10 @@ const pokemonService = {
     const pokemon = await Promise.all(promises);
 
     return mockPokemonPrice(pokemon.map((p) => p.data));
+  },
+  getPokemonById: async (id) => {
+    const res = await axios.get(`${endpoint}/pokemon/${id}`);
+    return res.data;
   }
 };
 
