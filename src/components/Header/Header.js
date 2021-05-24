@@ -40,7 +40,12 @@ function Header({
               value={searchInputValue}
               onChange={onSearchInputChange}
             />
-            <button type="button" className={`nes-btn ${searchBtnClass}`} onClick={onSearch}>
+            <button
+              data-testid="search-btn"
+              type="button"
+              className={`nes-btn ${searchBtnClass}`}
+              onClick={onSearch}
+            >
               Buscar
             </button>
           </div>

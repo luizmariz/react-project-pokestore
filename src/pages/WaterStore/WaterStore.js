@@ -29,7 +29,7 @@ function WaterStore() {
       <Header
         storeName="ÁGUA STORE"
         storePath="/water-store"
-        searchInputPlaceholder="Busque aqui o seu tipo planta"
+        searchInputPlaceholder="Busque aqui o seu tipo água"
         headerClass="c-water-store__header"
         searchBtnClass="is-primary"
         searchInputValue={searchInputValue}

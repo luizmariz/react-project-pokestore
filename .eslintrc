@@ -23,7 +23,8 @@
     "react/react-in-jsx-scope": "off",
     "no-console": "off",
     "no-param-reassign": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js"]}]
   },
   "settings": {
     "import/resolver": {
@@ -31,5 +32,11 @@
         "paths": ["src"]
       }
     }
+  },
+  "globals": {
+    "page": true,
+    "browser": true,
+    "context": true,
+    "jestPuppeteer": true
   }
 }

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -18,10 +17,6 @@ function PokemonDetails({ storeCartKey, checkoutBtnClass }) {
   const dispatch = useDispatch();
 
   const price = useSelector(selectPriceByPokemonId(pokemon?.id));
-
-  useEffect(() => {
-    console.log(status, pokemon);
-  }, [status]);
 
   const handleAddPokemonToCart = (e) => {
     e.preventDefault();
@@ -90,7 +85,7 @@ function PokemonDetails({ storeCartKey, checkoutBtnClass }) {
             </button>
           </div>
         </div>
-      )) || <p>Carregando...</p>}
+      )) || <p data-testid="loading-indicator">Carregando...</p>}
     </section>
   );
 }

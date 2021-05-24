@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-      "target": "ES6",
-      "baseUrl": "./src"
+    "target": "ES6",
+    "baseUrl": "./src"
   },
   "exclude": [
-      "node_modules",
-      "**/node_modules/*"
+    "node_modules"
   ],
   "typeAcquisition": {
     "exclude": [ "dotenv" ]

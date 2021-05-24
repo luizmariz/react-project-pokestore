@@ -29,7 +29,7 @@ function FireStore() {
       <Header
         storeName="FOGO STORE"
         storePath="/fire-store"
-        searchInputPlaceholder="Busque aqui o seu tipo planta"
+        searchInputPlaceholder="Busque aqui o seu tipo fogo"
         headerClass="c-fire-store__header"
         searchBtnClass="is-error"
         searchInputValue={searchInputValue}
