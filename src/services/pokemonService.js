@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { mockPokemonPrice } from 'utils/helpers';
 
-const endpoint = process.env.REACT_APP_POKEMON_API_ENDPOINT;
+const endpoint =
+  process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_POKEMEN_API_ENDPOINT_PROD
+    : process.env.REACT_APP_POKEMON_API_ENDPOINT;
 
 const pokemonService = {
   getAllPokemonByType: async (type) => {
