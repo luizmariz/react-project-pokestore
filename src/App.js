@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import PokeStoreHome from './pages/PokeStoreHome';
 import GrassStore from './pages/GrassStore';
@@ -7,7 +7,7 @@ import WaterStore from './pages/WaterStore';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Switch>
         <Route exact path="/">
           <PokeStoreHome />
