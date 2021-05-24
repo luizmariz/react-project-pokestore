@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-project-pokestore/static/css/main.04318d37.chunk.css",
+    "main.js": "/react-project-pokestore/static/js/main.5a96c7dd.chunk.js",
+    "main.js.map": "/react-project-pokestore/static/js/main.5a96c7dd.chunk.js.map",
+    "runtime-main.js": "/react-project-pokestore/static/js/runtime-main.3d795941.js",
+    "runtime-main.js.map": "/react-project-pokestore/static/js/runtime-main.3d795941.js.map",
+    "static/css/2.7c350fc9.chunk.css": "/react-project-pokestore/static/css/2.7c350fc9.chunk.css",
+    "static/js/2.ab72afeb.chunk.js": "/react-project-pokestore/static/js/2.ab72afeb.chunk.js",
+    "static/js/2.ab72afeb.chunk.js.map": "/react-project-pokestore/static/js/2.ab72afeb.chunk.js.map",
+    "static/js/3.1985fafe.chunk.js": "/react-project-pokestore/static/js/3.1985fafe.chunk.js",
+    "static/js/3.1985fafe.chunk.js.map": "/react-project-pokestore/static/js/3.1985fafe.chunk.js.map",
+    "index.html": "/react-project-pokestore/index.html",
+    "static/css/2.7c350fc9.chunk.css.map": "/react-project-pokestore/static/css/2.7c350fc9.chunk.css.map",
+    "static/css/main.04318d37.chunk.css.map": "/react-project-pokestore/static/css/main.04318d37.chunk.css.map",
+    "static/js/2.ab72afeb.chunk.js.LICENSE.txt": "/react-project-pokestore/static/js/2.ab72afeb.chunk.js.LICENSE.txt",
+    "static/media/global.scss": "/react-project-pokestore/static/media/e3t4euO8T-267oIAQAu6jDQyK3nbivN04w.74ce1152.woff2",
+    "static/media/pokestore-logo.8e93dbcd.png": "/react-project-pokestore/static/media/pokestore-logo.8e93dbcd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d795941.js",
+    "static/css/2.7c350fc9.chunk.css",
+    "static/js/2.ab72afeb.chunk.js",
+    "static/css/main.04318d37.chunk.css",
+    "static/js/main.5a96c7dd.chunk.js"
+  ]
+}
