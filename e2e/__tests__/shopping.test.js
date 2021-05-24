@@ -20,7 +20,7 @@ describe('As a pokémon trainer i wanna buy a squirtle', () => {
 
   it('should navigate to water store on link click', async () => {
     await page.click('a[href*="water"]');
-    await page.waitForTimeout(1000);
+    await page.waitForSelector('h1');
 
     const storeName = await page.$eval('h1', (el) => el.innerText);
 
@@ -45,5 +45,49 @@ describe('As a pokémon trainer i wanna buy a squirtle', () => {
     const firstPokemonMatchName = await page.$eval('div.c-pokemon > h5', (el) => el.innerText);
 
     expect(firstPokemonMatchName).toBe('squirtle');
+  });
+  it('should add squirtle to cart', async () => {
+    await page.click('div.c-pokemon > button');
+
+    const cartBtnText = await page.$eval('button[class*="cart"]', (el) => el.innerText);
+
+    expect(cartBtnText).toBe('Carrinho (1)');
+  });
+  it('should navigate to cart on cart button click', async () => {
+    await page.click('button[class*="cart"]');
+    await page.waitForTimeout(250);
+
+    const pageTitle = await page.$eval('h2', (el) => el.innerText);
+
+    expect(pageTitle).toBe('Seu carrinho de compras');
+  });
+  it('should check if cart content is correct', async () => {
+    const itemPrice = await page.$eval('span.c-cart-item__price', (el) => el.innerText);
+    const total = await page.$eval('p.c-shopping-cart__total', (el) => el.innerText);
+
+    expect(total.includes(itemPrice)).toBeTruthy();
+  });
+  it('should checkout', async () => {
+    const isCheckoutBtnDisabled = await page.$eval(
+      '.c-shopping-cart__checkout-btn',
+      (el) => el.disabled
+    );
+
+    expect(isCheckoutBtnDisabled).toBeFalsy();
+
+    await page.click('button.c-shopping-cart__checkout-btn');
+
+    const modalThanks = await page.$eval('[class*="dialog"] p', (el) => el.innerText);
+
+    expect(modalThanks).toBe('Obrigado pela compra!!');
+
+    const cartBtnText = await page.$eval('button[class*="cart"]', (el) => el.innerText);
+    const emptyCartItem = await page.$eval(
+      'div.c-shopping-cart__empty-cart-item',
+      (el) => el.innerText
+    );
+
+    expect(cartBtnText).toBe('Carrinho (0)');
+    expect(emptyCartItem).toBe('Carrinho vazio :(');
   });
 });
