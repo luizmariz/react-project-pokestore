@@ -9,6 +9,7 @@ function StoreHome({ pokemon, onAddPokemonToCart, path }) {
   return (
     <div className="l-grid l-grid--tab l-grid--lg c-store-home">
       <div className="l-grid__col-4 l-grid__col-8--tab l-grid__col-12--lg">
+        {!pokemon.length && <p className="c-store-home__not-found">Nenhum pokémon encontrado :(</p>}
         <PokemonList>
           {pokemon.map((p) => (
             <Pokemon

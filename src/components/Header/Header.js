@@ -15,6 +15,12 @@ function Header({
   searchBtnClass,
   itemsCartCounter
 }) {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(e);
+    }
+  };
+
   return (
     <header className="c-header">
       <section className="c-header__banner">
@@ -39,6 +45,7 @@ function Header({
               placeholder={searchInputPlaceholder}
               value={searchInputValue}
               onChange={onSearchInputChange}
+              onKeyDown={handleKeyDown}
             />
             <button
               data-testid="search-btn"

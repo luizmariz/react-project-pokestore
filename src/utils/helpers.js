@@ -10,7 +10,7 @@ export const mockPokemonPrice = (pokemon) =>
  *  Reitero que isso é uma má prática e não deve ser exercida em aplicações reais rs (Inclusive, envolvendo paginação isso seria um desastre)
  */
 export const simplePokemonSearchByName = (pokemon, str) =>
-  pokemon.filter((p) => p.name.includes(str));
+  pokemon.filter((p) => p.name.toLowerCase().includes(str.toLowerCase()));
 
 export const getPersistedCart = () => {
   try {
